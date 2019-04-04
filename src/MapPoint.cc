@@ -446,7 +446,7 @@ void MapPoint::serialize(Archive &ar, const unsigned int version)
     ar & mObservations;
     ar & mNormalVector;
     ar & mDescriptor;
-    ar & mpRefKF;
+    //ar & mpRefKF; //this one causes access violation (segmentation error) if uninitialized.
     ar & mnVisible & mnFound;
     ar & mbBad & mpReplaced;
     ar & mfMinDistance & mfMaxDistance;
